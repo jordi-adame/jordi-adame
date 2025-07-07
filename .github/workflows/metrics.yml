@@ -16,6 +16,7 @@ jobs:
           config_timezone: America/Los_Angeles
 
           base: "header, repositories, activity, community"
+          repositories_affiliations: owner, collaborator, organization_member
           plugin_isocalendar: yes
           plugin_languages: yes
           plugin_habits: yes
