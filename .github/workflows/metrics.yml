@@ -1,7 +1,9 @@
-name: Metrics
+name: GitHub Metrics
+
 on:
-  schedule: [{cron: "0 0 * * *"}] # every day at midnight
+  schedule: [{cron: "0 6 * * *"}]  # Runs daily at 6 AM UTC
   workflow_dispatch:
+    push: {branches: ["master"]}
 
 jobs:
   github-metrics:
@@ -10,6 +12,17 @@ jobs:
       - uses: lowlighter/metrics@latest
         with:
           user: jordi-adame
-          template: classic
-          base: header, repositories, activity, community, metadata
           config_timezone: America/Los_Angeles
+
+          base: header, activity, community, repositories, metadata
+          
+          plugin_languages: yes
+          plugin_achievements: yes
+          plugin_lines: yes
+          plugin_habits: yes
+          plugin_isocalendar: yes
+          plugin_calendar: yes
+          plugin_followup: yes
+          plugin_topics: yes
+          plugin_traffic: yes
+          plugin_issue_pr_lang: yes
