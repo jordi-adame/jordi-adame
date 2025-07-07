@@ -12,6 +12,7 @@ jobs:
       - uses: lowlighter/metrics@latest
         with:
           user: jordi-adame
+          token: ${{ secrets.METRICS_TOKEN }}
           config_timezone: America/Los_Angeles
 
           base: header, activity, community, repositories, metadata
