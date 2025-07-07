@@ -3,7 +3,7 @@ name: GitHub Metrics
 on:
   schedule: [{cron: "0 6 * * *"}]  # Runs daily at 6 AM UTC
   workflow_dispatch:
-    push: {branches: ["main"]}
+    inputs: {}
 
 jobs:
   github-metrics:
@@ -15,11 +15,15 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           config_timezone: America/Los_Angeles
 
-          base: "header, repositories, activity, community"
+          # Pull from ALL your affiliated repos (not just owned ones)
+          base: ""
           repositories_affiliations: owner, collaborator, organization_member
+
+          # Aggregate stats from past year
           plugin_isocalendar: yes
-          plugin_languages: yes
-          plugin_habits: yes
           plugin_isocalendar_duration: full-year
-          
-          
+
+          # Actual languages used across all repos
+          plugin_languages: yes
+          plugin_languages_ignored: html, makefile
+          plugin_languages_limit: 6
