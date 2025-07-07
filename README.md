@@ -9,5 +9,5 @@ Here's a quick look at my GitHub activity from the past year:
 <br/>
 
 <p align="center">
-  <img src="github-yearly-summary.svg" width="90%" alt="GitHub yearly contribution summary" />
+  <img src="github-metrics.svg" width="90%" alt="GitHub yearly contribution summary" />
 </p>
