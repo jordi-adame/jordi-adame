@@ -4,9 +4,10 @@
 😎 I speak English and Español.  
 📊 Here's what I've been up to on GitHub:
 
+Here's a quick look at my GitHub activity from the past year:
+
 <br/>
+
 <p align="center">
-  <a href="https://github.com/jordi-adame">
-    <img src="github-metrics.svg" width="100%" alt="GitHub metrics" />
-  </a>
+  <img src="github-yearly-summary.svg" width="90%" alt="GitHub yearly contribution summary" />
 </p>
