@@ -3,6 +3,7 @@ name: GitHub Metrics
 on:
   schedule: [{cron: "0 6 * * *"}]  # Runs daily at 6 AM UTC
   workflow_dispatch:
+    push: {branches: ["main"]}
 
 jobs:
   github-metrics:
@@ -14,9 +15,8 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           config_timezone: America/Los_Angeles
 
-          base: ""
+          base: "header, repositories, activity, community"
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
-          config_output: github-yearly-summary.svg
           
           
