@@ -1,29 +1,29 @@
-name: GitHub Metrics
+# name: GitHub Metrics
 
-on:
-  schedule: [{cron: "0 6 * * *"}]  # Runs daily at 6 AM UTC
-  workflow_dispatch:
-    inputs: {}
+# on:
+#   schedule: [{cron: "0 6 * * *"}]  # Runs daily at 6 AM UTC
+#   workflow_dispatch:
+#     inputs: {}
 
-jobs:
-  github-metrics:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: lowlighter/metrics@latest
-        with:
-          user: jordi-adame
-          token: ${{ secrets.METRICS_TOKEN }}
-          config_timezone: America/Los_Angeles
+# jobs:
+#   github-metrics:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: lowlighter/metrics@latest
+#         with:
+#           user: jordi-adame
+#           token: ${{ secrets.METRICS_TOKEN }}
+#           config_timezone: America/Los_Angeles
 
-          # Pull from ALL your affiliated repos (not just owned ones)
-          base: ""
-          repositories_affiliations: owner, collaborator, organization_member
+#           # Pull from ALL your affiliated repos (not just owned ones)
+#           base: ""
+#           repositories_affiliations: owner, collaborator, organization_member
 
-          # Aggregate stats from past year
-          plugin_isocalendar: yes
-          plugin_isocalendar_duration: full-year
+#           # Aggregate stats from past year
+#           plugin_isocalendar: yes
+#           plugin_isocalendar_duration: full-year
 
-          # Actual languages used across all repos
-          plugin_languages: yes
-          plugin_languages_ignored: html, makefile
-          plugin_languages_limit: 6
+#           # Actual languages used across all repos
+#           plugin_languages: yes
+#           plugin_languages_ignored: html, makefile
+#           plugin_languages_limit: 6
